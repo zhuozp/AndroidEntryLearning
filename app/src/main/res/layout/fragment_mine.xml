@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal|top">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:padding="12dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_comment"/>
+
+                <TextView
+                    android:id="@+id/processIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:text="王者级别"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_toRightOf="@id/icon"
+                    android:layout_toLeftOf="@id/processIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Shopee" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_below="@id/info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dedede"/>
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_below="@id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                />
+        </RelativeLayout>
+    </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+</FrameLayout>

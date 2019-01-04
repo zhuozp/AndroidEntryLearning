@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EntryTask</string>
+    <string name="home_entry_learning_page">学习</string>
+    <string name="home_entry_mine_page">我的</string>
+
+    <string name="learning_page_all_title">ALL</string>
+    <string name="learning_page_delete_title">Delete</string>
+
+</resources>
