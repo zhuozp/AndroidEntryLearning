@@ -33,7 +33,6 @@ public class RetrofitUtils {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                Log.d("Test", "" + message);
                 Log.d("Http请求参数：", message);
             }
         });
