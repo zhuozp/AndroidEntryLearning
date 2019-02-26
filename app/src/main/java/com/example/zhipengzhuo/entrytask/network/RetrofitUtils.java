@@ -6,6 +6,26 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 public class RetrofitUtils {
+    public static volatile Retrofit sRetrofit;
+
+    public static Retrofit getsRetrofit() {
+        if (sRetrofit == null) {
+            synchronized (RetrofitUtils.class) {
+                if (sRetrofit == null) {
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl("http://10.12.74.169:7000/")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                            .client(RetrofitUtils.getOkHttpClient())
+                            .build();
+                    sRetrofit = retrofit;
+                }
+            }
+        }
+
+        return sRetrofit;
+    }
+
     public static OkHttpClient getOkHttpClient() {
         // 日志显示级别
         HttpLoggingInterceptor.Level level = HttpLoggingInterceptor.Level.BODY;

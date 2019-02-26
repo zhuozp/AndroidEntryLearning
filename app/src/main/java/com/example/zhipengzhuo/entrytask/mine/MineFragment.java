@@ -65,12 +65,7 @@ public class MineFragment extends Fragment {
     }
 
     private void reqData() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.12.74.169:7000/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(RetrofitUtils.getOkHttpClient())
-                .build();
+        Retrofit retrofit = RetrofitUtils.getsRetrofit();
 
         GetRequest getRequest = retrofit.create(GetRequest.class);
         Observable<UserInfo> observable = getRequest.reqUserInfo(2);
